@@ -1,20 +1,38 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 
+const Search = () => {
+    return <div className='search-container'>
+        <form action="/" method="get">
+            <label htmlFor="header-search" style={{marginRight: 10}}>
+                <span className="visually-hidden">How are you feeling today?</span>
+            </label>
+            <input
+                type="text"
+                id="header-search"
+                placeholder="Mood"
+                name="s"
+            />
+        </form>
+    </div>
+}
 
 class Image extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            catImage: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nationalgeographic.com%2Fanimals%2Fmammals%2Ffacts%2Fdomestic-cat&psig=AOvVaw2168yU6nHD-NKOWfArN0Fe&ust=1649807116855000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCKjln8uYjfcCFQAAAAAdAAAAABAD',
+            catImage: [
+                null
+                //'https://images.theconversation.com/files/443350/original/file-20220131-15-1ndq1m6.jpg?ixlib=rb-1.1.0&rect=0%2C0%2C3354%2C2464&q=45&auto=format&w=926&fit=clip'
+            ],
         };
     }
   
     render() {
         return (
             <div className='image-container'>
-                <img src={this.state.catImage} alt="Cat" />
+                <img src={this.state.catImage[0]} alt="Cat" />
             </div>
         );
     }
@@ -24,21 +42,18 @@ class Emoticats extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="search">
-                    {{ /* TODO */ }}
-                </div>
-                <div className="image">
-                    <Image />
-                </div>
+                <Search />
+                <Image />
             </div>
         );
     }
 }
   
   // ========================================
-  
-ReactDOM.render(
-    <Emoticats />,
-    document.getElementById('root')
+
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render (
+    <Emoticats />
 );
   

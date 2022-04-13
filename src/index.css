@@ -1,12 +1,31 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
   
-  ol, ul {
-    padding-left: 30px;
-  }
+ol, ul {
+  padding-left: 30px;
+}
 
-  .kbd-navigation {
-    background: #ddd;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0px;
+  background: #fff;
+
+}
+
+.kbd-navigation {
+  background: #ddd;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
