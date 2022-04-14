@@ -12,6 +12,13 @@ const Emoticats = () => {
             console.log("Search submitted.");
             console.log("Value: " + searchInput);
             event.preventDefault();
+
+            // Call google image api to search for moody cat
+
+        }
+
+        async function callSearchEngine(searchPhrase) {
+
         }
     
         function handleChange(event) {
@@ -25,7 +32,10 @@ const Emoticats = () => {
                 onSubmit={handleSubmit}
             >
                 <div className='text-and-search'>
-                    <label htmlFor="header-search" style={{marginBottom: 20}}>
+                    <label 
+                        htmlFor="header-search" 
+                        style={{marginBottom: 20}}
+                    >
                         <span className="visually-hidden">How are you feeling today?</span>
                     </label>
                     <div className='bar-and-button'>
@@ -39,7 +49,8 @@ const Emoticats = () => {
                             onChange={handleChange}
                         />
                         <input 
-                            type="submit" value="Submit"
+                            type="submit" 
+                            value="Submit"
                         />
                     </div>
                 </div>
@@ -51,7 +62,10 @@ const Emoticats = () => {
         return (
             catImage &&
             <div className='image-container'>
-                <img src={catImage} alt="Cat" />
+                <img 
+                    src={catImage} 
+                    alt="Cat" 
+                />
             </div>
         );
     }
