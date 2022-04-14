@@ -29,3 +29,10 @@ ol, ul {
 .search-container {
   margin-bottom: 20px;
 }
+
+.text-and-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
